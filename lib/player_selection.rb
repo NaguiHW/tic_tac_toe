@@ -1,3 +1,5 @@
+load "../lib/mark_selection.rb"
+
 def selection
     turns = 1
     while turns <= 9
