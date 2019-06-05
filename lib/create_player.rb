@@ -1,5 +1,9 @@
 class CreatePlayer
     attr_accessor :name, :mark
+    def initialize
+        @player_ar = []
+    end
+    attr_reader :player_ar
 end
 
 def choose_mark player

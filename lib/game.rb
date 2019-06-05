@@ -27,6 +27,7 @@ def player_turn player
         p "Enter a correct number"
         player1_selection = gets.chomp.to_i
     end
+    player.player_ar << player1_selection
     $ar[player1_selection-1] = player.mark
 end
 
@@ -40,5 +41,12 @@ def selection
         end
         turns += 1
         board $ar
+        # p $player1.player_ar
+        if player_ar.include?(1, 2, 3) || player_ar.include?(4, 5, 6) || player_ar.include?(7, 8, 9) || player_ar.include?(1, 4, 7) || player_ar.include?(2, 5, 8) || player_ar.include?(3, 6, 9) || player_ar.include?(1, 5, 9) || player_ar.include?(7, 5, 3)
+            turns % 2 == 1 ? "#{$player1.name} is the winner!" : "#{$player2.name} is the winner!"
+        else
+            "Nobody wins"
+        end
     end
 end
+
