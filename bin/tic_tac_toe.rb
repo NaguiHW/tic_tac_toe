@@ -5,3 +5,6 @@ load "../lib/board.rb"
 welcome_message
 mark_selection
 board
+player_selection
+
+p $player1.name
