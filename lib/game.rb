@@ -31,22 +31,47 @@ def player_turn player
     $ar[player1_selection-1] = player.mark
 end
 
+def who_wins player
+
+    if player.player_ar.include?(1) && player.player_ar.include?(2) && player.player_ar.include?(3)
+        answear player
+    elsif player.player_ar.include?(4) && player.player_ar.include?(5) && player.player_ar.include?(6)
+        answear player
+    elsif player.player_ar.include?(7) && player.player_ar.include?(8) && player.player_ar.include?(9)
+        answear player
+    elsif player.player_ar.include?(1) && player.player_ar.include?(4) && player.player_ar.include?(7)
+        answear player
+    elsif player.player_ar.include?(2) && player.player_ar.include?(5) && player.player_ar.include?(8)
+        answear player
+    elsif player.player_ar.include?(3) && player.player_ar.include?(6) && player.player_ar.include?(9)
+        answear player
+    elsif player.player_ar.include?(1) && player.player_ar.include?(5) && player.player_ar.include?(9)
+        answear player
+    elsif player.player_ar.include?(3) && player.player_ar.include?(5) && player.player_ar.include?(7)
+        answear player
+    else
+        p "Nobody wins"
+    end
+
+    private
+    def answear player
+        p "#{player.name} is the winner"
+        $turns = 9
+    end
+end
+
 def selection
-    turns = 1
-    while turns <= 9
-        if turns % 2 == 1
+    $turns = 1
+    while $turns <= 9
+        if $turns % 2 == 1
             player_turn $player1
+            who_wins $player1
         else
             player_turn $player2
+            who_wins $player2
         end
-        turns += 1
+        $turns += 1
         board $ar
-        # p $player1.player_ar
-        if player_ar.include?(1, 2, 3) || player_ar.include?(4, 5, 6) || player_ar.include?(7, 8, 9) || player_ar.include?(1, 4, 7) || player_ar.include?(2, 5, 8) || player_ar.include?(3, 6, 9) || player_ar.include?(1, 5, 9) || player_ar.include?(7, 5, 3)
-            turns % 2 == 1 ? "#{$player1.name} is the winner!" : "#{$player2.name} is the winner!"
-        else
-            "Nobody wins"
-        end
     end
 end
 
