@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
-load '../lib/welcome_message.rb'
-load '../lib/game.rb'
+require_relative '../lib/welcome_message.rb'
+require_relative '../lib/create_player.rb'
+require_relative '../lib/game.rb'
 
-welcome_message
-mark_selection
-selection
+WelcomeMessage.new
+create_player = CreatePlayer.new
+create_player.mark_selection
+game = Game.new
+game.selection
