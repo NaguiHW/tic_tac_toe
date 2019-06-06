@@ -20,6 +20,7 @@ class CreatePlayer
   end
 
   private
+  
   def choose_mark(player)
     p "#{player}, which mark do you want? X or O"
     mark = gets.chomp.upcase
