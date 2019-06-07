@@ -10,23 +10,25 @@ describe Game do
         attr_reader :player_ar
     end
 
-    player = CreatePlayer.new
-    player.name = 'K'
-    player.player_ar << 1
-    player.player_ar << 2
-    player.player_ar << 3
+    player1 = CreatePlayer.new
+    player1.name = 'K'
+    player1.player_ar << 3
+    player1.player_ar << 5
+    player1.player_ar << 7
 
-    def answear(player)
-        p "#{player.name} is the winner"
-        $turns = 9
-    end
+    player2 = CreatePlayer.new
+    player2.name = 'B'
+    player2.player_ar << 2
+    player2.player_ar << 5
+    player2.player_ar << 9
 
     describe '#who_wins(player)' do
         game = Game.new
         it 'if we have one of a kind in a row then it should return the player who wins' do
-            expect(game.who_wins(player)).to eql("K is the winner", 9)
+            expect(game.who_wins(player1)).to eql("K is the winner")
         end
-        
+        it 'if we have one of a kind in a row then it should return the player who wins' do
+            expect(game.who_wins(player2)).to eql("Nobody wins")
+        end
     end
-
 end

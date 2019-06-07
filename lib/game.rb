@@ -41,28 +41,31 @@ class Game
 
   def who_wins(player)
     if player.player_ar.include?(1) && player.player_ar.include?(2) && player.player_ar.include?(3)
-      answear player
+      $turns = 9
+      p "#{player.name} is the winner"
     elsif player.player_ar.include?(4) && player.player_ar.include?(5) && player.player_ar.include?(6)
-      answear player
+      $turns = 9
+      p "#{player.name} is the winner"
     elsif player.player_ar.include?(7) && player.player_ar.include?(8) && player.player_ar.include?(9)
-      answear player
+      $turns = 9
+      p "#{player.name} is the winner"
     elsif player.player_ar.include?(1) && player.player_ar.include?(4) && player.player_ar.include?(7)
-      answear player
+      $turns = 9
+      p "#{player.name} is the winner"
     elsif player.player_ar.include?(2) && player.player_ar.include?(5) && player.player_ar.include?(8)
-      answear player
+      $turns = 9
+      p "#{player.name} is the winner"
     elsif player.player_ar.include?(3) && player.player_ar.include?(6) && player.player_ar.include?(9)
-      answear player
+      $turns = 9
+      p "#{player.name} is the winner"
     elsif player.player_ar.include?(1) && player.player_ar.include?(5) && player.player_ar.include?(9)
-      answear player
+      $turns = 9
+      p "#{player.name} is the winner"
     elsif player.player_ar.include?(3) && player.player_ar.include?(5) && player.player_ar.include?(7)
-      answear player
+      $turns = 9
+      p "#{player.name} is the winner"
     else
       p 'Nobody wins'
-    end
-  
-    def answear(player)
-      p "#{player.name} is the winner"
-      $turns = 9
     end
   end
 end

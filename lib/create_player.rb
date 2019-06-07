@@ -18,8 +18,6 @@ class CreatePlayer
     p "#{$player2.name}, your mark is #{$player2.mark}"
     board
   end
-
-  private
   
   def choose_mark(player)
     p "#{player}, which mark do you want? X or O"
