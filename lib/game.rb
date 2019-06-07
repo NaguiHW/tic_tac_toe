@@ -23,8 +23,6 @@ class Game
       board $ar
     end
   end
-
-  private
   
   def board(ar)
     puts "\n #{ar[0]} | #{ar[1]} | #{ar[2]} \n---+---+--- \n #{ar[3]} | #{ar[4]} | #{ar[5]} \n---+---+--- \n #{ar[6]} | #{ar[7]} | #{ar[8]}\n \n"

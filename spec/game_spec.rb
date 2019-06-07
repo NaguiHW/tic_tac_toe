@@ -22,8 +22,9 @@ describe Game do
     end
 
     describe '#who_wins(player)' do
+        game = Game.new
         it 'if we have one of a kind in a row then it should return the player who wins' do
-            expect(who_wins(player)).to eql("K is the winner", 9)
+            expect(game.who_wins(player)).to eql("K is the winner", 9)
         end
         
     end
