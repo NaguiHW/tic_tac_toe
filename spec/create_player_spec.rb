@@ -10,13 +10,12 @@ describe CreatePlayer do
         attr_reader :player_ar
     end
 
-    # player1 = CreatePlayer.new
-    # player1.name = 'B'
-    mark = "X"
     describe "choose_mark" do
         player = CreatePlayer.new
+        player.name = "Player"
+        arr = ["X", "O"]
         it "Check the input if it's an X or O" do
-            expect(player.choose_mark(player)).to eql(true)
+            expect(arr.any?(player.choose_mark(player))).to eql(true)
         end
     end
 end

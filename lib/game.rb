@@ -64,7 +64,7 @@ class Game
     elsif player.player_ar.include?(3) && player.player_ar.include?(5) && player.player_ar.include?(7)
       $turns = 9
       p "#{player.name} is the winner"
-    else
+    elsif $turns == 9
       p 'Nobody wins'
     end
   end
