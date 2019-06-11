@@ -9,7 +9,7 @@ class CreatePlayer
     p 'Player 1, what is your name?'
     $player1 = CreatePlayer.new
     $player1.name = gets.chomp
-    $player1.mark = choose_mark $player1.name
+    choose_mark $player1
     p "#{$player1.name}, your mark is #{$player1.mark}"
     p 'Player 2, what is your name?'
     $player2 = CreatePlayer.new
@@ -18,17 +18,15 @@ class CreatePlayer
     p "#{$player2.name}, your mark is #{$player2.mark}"
     board
   end
-
-  private
   
   def choose_mark(player)
-    p "#{player}, which mark do you want? X or O"
+    p "#{player.name}, which mark do you want? X or O"
     mark = gets.chomp.upcase
     until (mark == 'X') || (mark == 'O')
       p 'Introduce a valid mark. X or O'
       mark = gets.chomp.upcase
     end
-    mark
+    player.mark = mark
   end
 end
 
